@@ -54,22 +54,38 @@ class _StudentsScreenState extends State<StudentsScreen> {
                           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           decoration: BoxDecoration(
                             color: Colors.grey.withOpacity(0.5),
-                            borderRadius: BorderRadius.circular(12)
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(width: 1, color: Colors.cyan),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.cyan.withOpacity(0.1),
+                                blurRadius: 3,
+                                spreadRadius: 3
+                              ),
+                              BoxShadow(
+                                  color: Colors.cyanAccent.withOpacity(0.05),
+                                  blurRadius: 3,
+                                  spreadRadius: 3
+                              )
+                            ]
                           ),
                           child: Column(
                             children: [
                               const SizedBox(height: 5,),
                               ListTile(
-                                leading: SizedBox(height: 60, width: 60, child: ClipRRect(borderRadius: BorderRadius.circular(6), child: Image.file(File(studentModel.image), fit: BoxFit.cover,))),
+                                leading: Container(height: 58, width: 58, decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.cyan), borderRadius: BorderRadius.circular(6)), child: ClipRRect(borderRadius: BorderRadius.circular(6), child: Image.file(File(studentModel.image), fit: BoxFit.cover,))),
                                 title: Text(studentModel.firstName, style: const TextStyle(fontSize: 20),),
                                 subtitle: Text(studentModel.lastName, style: const TextStyle(fontSize: 18),),
-                                trailing: IconButton(
-                                  onPressed: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                                      return UpdateStudentScreen(studentModel: studentModel);
-                                    }));
-                                  },
-                                  icon: const Icon(Icons.edit, color: Colors.green,size: 30,),
+                                trailing: Padding(
+                                  padding: const EdgeInsets.only(bottom: 20),
+                                  child: IconButton(
+                                    onPressed: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                                        return UpdateStudentScreen(studentModel: studentModel);
+                                      }));
+                                    },
+                                    icon: const Icon(Icons.edit, color: Colors.green,size: 30,),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 4,),
