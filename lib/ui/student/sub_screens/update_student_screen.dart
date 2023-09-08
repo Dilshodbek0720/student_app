@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:local_db/models/form_status.dart';
+import 'package:local_db/models/student_model.dart';
 import 'package:student_app/blocs/student_bloc.dart';
 import 'package:student_app/blocs/student_event.dart';
 import 'package:student_app/blocs/student_state.dart';
-import 'package:student_app/data/models/student_model.dart';
-
-import '../../../data/models/form_status.dart';
 import '../../../utils/colors/colors.dart';
 import '../../../utils/ui_utils/show_error_message.dart';
 import '../../widgets/global_button.dart';

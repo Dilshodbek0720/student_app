@@ -1,15 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:local_db/models/form_status.dart';
+import 'package:local_db/models/student_model.dart';
 import 'package:student_app/blocs/student_bloc.dart';
 import 'package:student_app/blocs/student_event.dart';
 import 'package:student_app/blocs/student_state.dart';
-import 'package:student_app/data/models/student_model.dart';
 import 'package:student_app/ui/student/sub_screens/add_student_screen.dart';
 import 'package:student_app/ui/student/sub_screens/update_student_screen.dart';
-
-import '../../data/models/form_status.dart';
-
 
 class StudentsScreen extends StatefulWidget {
   const StudentsScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:student_app/data/models/student_model.dart';
-import '../data/models/form_status.dart';
+import 'package:local_db/models/form_status.dart';
+import 'package:local_db/models/student_model.dart';
 
 class StudentsState extends Equatable {
   const StudentsState({
