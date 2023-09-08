@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:local_db/models/form_status.dart';
-import 'package:local_db/models/student_model.dart';
-import 'package:student_app/blocs/student_bloc.dart';
-import 'package:student_app/blocs/student_event.dart';
-import 'package:student_app/blocs/student_state.dart';
-import '../../../utils/colors/colors.dart';
-import '../../../utils/ui_utils/show_error_message.dart';
-import '../../widgets/global_button.dart';
-import '../../widgets/global_text_fields.dart';
+import 'package:student_app/utils/export/export.dart';
 
 class AddStudentScreen extends StatefulWidget {
   const AddStudentScreen({super.key});
@@ -53,12 +42,15 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
                 },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text("Select Image"), Icon(Icons.image)],
+                  children: [
+                    Text("Select Image"),
+                    SizedBox(width: 10,),
+                    Icon(Icons.image)],
                 ),
               ),
               const SizedBox(height: 20,),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 34.0),
                 child: GlobalButton(title: "Add Student", onTap: (){
                   if(firstNameController.text.isNotEmpty&&lastNameController.text.isNotEmpty&&descriptionController.text.isNotEmpty&&courseController.text.isNotEmpty&&groupController.text.isNotEmpty&&universityController.text.isNotEmpty&&imgUrl.isNotEmpty){
                     BlocProvider.of<StudentsBloc>(context).add(AddStudent(newStudent: StudentModel(
@@ -74,7 +66,8 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
                     showErrorMessage(message: "Malumotlar to'liq emas", context: context);
                   }
                 }),
-              )
+              ),
+              const SizedBox(height: 30,)
             ],
           );
         },

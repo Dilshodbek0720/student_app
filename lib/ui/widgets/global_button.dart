@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
-import '../../utils/colors/colors.dart';
+import 'package:student_app/utils/export/export.dart';
+
 class GlobalButton extends StatelessWidget {
   const GlobalButton({Key? key, required this.title, required this.onTap}) : super(key: key);
 

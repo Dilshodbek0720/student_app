@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../utils/colors/colors.dart';
+import 'package:student_app/utils/export/export.dart';
 
 class GlobalTextField extends StatelessWidget {
   GlobalTextField({
@@ -24,12 +23,16 @@ class GlobalTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      decoration: BoxDecoration(
+        border: Border.all(width: 1, color: Colors.cyan),
+        borderRadius: BorderRadius.circular(10)
+      ),
       child: TextField(
         maxLines: maxLine,
         style: const TextStyle(
             fontSize: 20,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             color: AppColors.black,
             fontFamily: "DMSans"),
         textAlign: textAlign,
