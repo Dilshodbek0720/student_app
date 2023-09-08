@@ -64,7 +64,7 @@ class _UpdateStudentScreenState extends State<UpdateStudentScreen> {
               const SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 34.0),
-                child: GlobalButton(title: "Add Student", onTap: (){
+                child: GlobalButton(title: "Update Student", onTap: (){
                   if(firstNameController.text.isNotEmpty&&lastNameController.text.isNotEmpty&&descriptionController.text.isNotEmpty&&courseController.text.isNotEmpty&&groupController.text.isNotEmpty&&universityController.text.isNotEmpty&&imgUrl.isNotEmpty){
                     BlocProvider.of<StudentsBloc>(context).add(UpdateStudent(updatedStudent: StudentModel(
                         lastName: lastNameController.text,
